@@ -6,7 +6,7 @@ pipeline {
         BRANCH_NAME = 'main'
         GIT_URL = 'https://github.com/boateng0303/staticapp.git'
         IMAGE_TAG = 'boatengkwasi1991/staticapp'
-        IMAGE_VERSION = ${BUILD_NUMBER}
+        IMAGE_VERSION = "${BUILD_NUMBER}"
     }
 
     stages {
