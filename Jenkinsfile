@@ -5,6 +5,8 @@ pipeline {
     environment {
         BRANCH_NAME = 'main'
         GIT_URL = 'https://github.com/boateng0303/staticapp.git'
+        IMAGE_TAG = 'boatengkwasi1991/staticapp'
+        IMAGE_VERSION = ${BUILD_NUMBER}
     }
 
     stages {
@@ -15,7 +17,7 @@ pipeline {
         }
         stage('docker build'){
             steps{
-                sh 'docker build -t staticapp .'
+                sh 'docker build -t "${IMAGE_TAG}":"${IMAGE_VERSION}" .'
                 sh 'docker images'
             }
         }
